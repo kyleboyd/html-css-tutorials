@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">        
+        <meta name="author" content="CHANGE-ME">
+        <meta name="description" content="CHANGE-ME">
+
+        <title>Button #1 - </title>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        
+        <style>
+            
+            /* Grid Layout */
+            #grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-gap: 10px;
+                padding: 10px;
+            }
+            
+            /* Button 1 Styles */
+            
+            .button1 {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            
+            /* Button 1 Styles End*/
+
+            /* Button 2 Styles Start*/
+
+            .button2 {
+                background-color: white; 
+                color: black; 
+                border: 2px solid #008CBA;
+            }
+
+            .button2:hover {
+                background-color: #008CBA;
+                color: white;
+            }
+            
+            /* Button 2 Styles End*/
+
+            /* Button 3 Styles Start*/
+
+            .button3 {
+                background-color: #f4511e;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                font-size: 16px;
+                margin: 4px 2px;
+                opacity: 0.6;
+                transition: 0.3s;
+                display: inline-block;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .button3:hover {
+                opacity: 1
+            }
+            
+            
+
+            /* Button 3 Styles End*/
+            
+            /* Button 4 Styles Start*/
+
+            
+        $time: 330ms;
+
+        $btns: (
+          alpha: (
+            gstart: #21D4FD,
+            gend: #B721FF,
+            tstart: #B721FF,
+            tend: #21D4FD
+          ),
+        );
+
+        .btn {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 900;
+          padding: 1.25rem 2rem;
+          font-size: 1rem;
+          border-radius: 3.5rem / 100%;
+          position: relative;
+          min-width: 15rem;
+          max-width: 90vw;
+          overflow: hidden;
+          border: 0;
+          cursor: pointer;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          transition: all $time; }
+
+          span {
+            position: relative;
+            z-index: 1;
+          }
+
+          &:before {
+            content: "";
+            background-color: #21D4FD;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: scale(4) translateX(-100%);
+            transition: all $time * 1.5 ease-out;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {    
+            &:before {
+              transform: scale(4) translate(37%);
+            } 
+          }
+        }
+
+
+        @each $bname, $bcolors in $btns {
+          .btn--#{$bname} {
+            background-color: map-get($bcolors, gstart);
+              color: map-get($bcolors, tstart);
+              
+            }
+
+            &:before {
+              background-color: map-get($bcolors, gend);
+              background-image: linear-gradient(to right, map-get($bcolors, gend) 30%, map-get($bcolors, gstart) 100%);
+              position: absolute;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {    
+              color: map-get($bcolors, tend);
+            }
+          }
+        }
+
+            
+/* Button 4 Styles End*/
+
+            
+             
+        </style>
+        
+        
+    </head>
+
+    <body>
+    <section id="grid">
+    <article class="item">
+    <a href="http://www.bbc.co.uk">
+    <button class="button1">
+        Button One
+    </button>
+    </a>
+    </article>
+        
+        <article class="item">
+    <button class=" button1 button2">
+        Button Two
+    </button>
+    </article>
+        
+        <article class="item">
+    <button class="button3">
+        Button Three
+    </button>
+    </article>
+        
+        <article class="item">
+            <button class="btn btn--alpha">
+        Button Four
+    </button>
+    </article>
+        
+        <article class="item">
+    <button>
+        This is a button
+    </button>
+    </article>
+        
+        <article class="item">
+    <button>
+        This is a button
+    </button>
+    </article>
+        
+        <article class="item">
+    <button>
+        This is a button
+    </button>
+    </article>
+        
+        <article class="item">
+    <button>
+        This is a button
+    </button>
+    </article>
+    </section>
+        
+
+    </body>
+</html>
